@@ -1,0 +1,818 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>종현 & 은지 결혼합니다</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;500;600&family=Cormorant+Garamond:ital,wght@0,300;0,400;1,300;1,400&display=swap');
+
+  :root {
+    --cream: #FAF7F2;
+    --gold: #B8975A;
+    --gold-light: #D4B483;
+    --dark: #2C2C2C;
+    --gray: #888;
+    --light-gray: #EEE;
+    --border: rgba(184,151,90,0.25);
+  }
+
+  * { margin:0; padding:0; box-sizing:border-box; }
+
+  body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: 'Noto Serif KR', serif;
+    font-size: 14px;
+    line-height: 1.8;
+    max-width: 430px;
+    margin: 0 auto;
+    overflow-x: hidden;
+  }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    height: 100svh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-end;
+    padding-bottom: 60px;
+    overflow: hidden;
+    background: #1a1a1a;
+  }
+
+  .hero-img-area {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(160deg, #2a2319 0%, #1a1510 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0.85;
+  }
+
+  .hero-img-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: rgba(255,255,255,0.2);
+    font-size: 13px;
+    border: none;
+  }
+
+  .hero-img-placeholder svg {
+    opacity: 0.3;
+  }
+
+  .hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to bottom, transparent 30%, rgba(26,21,16,0.85) 100%);
+  }
+
+  .hero-content {
+    position: relative;
+    text-align: center;
+    color: #fff;
+    z-index: 2;
+  }
+
+  .hero-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12px;
+    letter-spacing: 0.3em;
+    color: var(--gold-light);
+    margin-bottom: 16px;
+    text-transform: uppercase;
+  }
+
+  .hero-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 52px;
+    font-weight: 300;
+    letter-spacing: 0.04em;
+    line-height: 1.1;
+    color: #fff;
+  }
+
+  .hero-names .amp {
+    font-style: italic;
+    color: var(--gold-light);
+    font-size: 44px;
+  }
+
+  .hero-date {
+    margin-top: 20px;
+    font-size: 12px;
+    letter-spacing: 0.2em;
+    color: rgba(255,255,255,0.7);
+  }
+
+  .scroll-hint {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    color: rgba(255,255,255,0.4);
+    font-size: 10px;
+    letter-spacing: 0.15em;
+    animation: fadeUpDown 2s ease-in-out infinite;
+    z-index: 2;
+  }
+
+  @keyframes fadeUpDown {
+    0%,100% { opacity:0.4; transform: translateX(-50%) translateY(0); }
+    50% { opacity:0.8; transform: translateX(-50%) translateY(-6px); }
+  }
+
+  /* ── SECTIONS ── */
+  section {
+    padding: 60px 28px;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .section-label {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 11px;
+    letter-spacing: 0.35em;
+    color: var(--gold);
+    text-transform: uppercase;
+    text-align: center;
+    margin-bottom: 28px;
+  }
+
+  .divider {
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    margin: 0 auto 28px;
+    opacity: 0.5;
+  }
+
+  /* ── GREETING ── */
+  .greeting-text {
+    text-align: center;
+    font-size: 13.5px;
+    line-height: 2.2;
+    color: #444;
+    word-break: keep-all;
+  }
+
+  .greeting-text strong {
+    display: block;
+    font-size: 17px;
+    color: var(--dark);
+    font-weight: 500;
+    margin-bottom: 20px;
+    line-height: 1.6;
+  }
+
+  /* ── INFO ── */
+  .info-block {
+    text-align: center;
+  }
+
+  .info-main {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 300;
+    letter-spacing: 0.05em;
+    color: var(--dark);
+    margin-bottom: 6px;
+  }
+
+  .info-sub {
+    font-size: 12.5px;
+    color: var(--gray);
+    letter-spacing: 0.08em;
+  }
+
+  .info-row {
+    margin-top: 28px;
+    padding: 22px 0;
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+  }
+
+  .info-row p {
+    font-size: 13px;
+    color: #555;
+    line-height: 2;
+    text-align: center;
+  }
+
+  .info-row p strong {
+    color: var(--dark);
+    font-weight: 500;
+  }
+
+  /* ── GALLERY (placeholder) ── */
+  .gallery-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+  }
+
+  .gallery-item {
+    aspect-ratio: 3/4;
+    background: #e8e4df;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    color: #bbb;
+    font-size: 11px;
+    letter-spacing: 0.05em;
+    cursor: pointer;
+    border-radius: 2px;
+    transition: opacity 0.2s;
+  }
+
+  .gallery-item:first-child {
+    grid-column: 1/-1;
+    aspect-ratio: 3/2;
+  }
+
+  .gallery-item:hover { opacity: 0.85; }
+
+  /* ── FAMILY ── */
+  .family-table {
+    width: 100%;
+    display: flex;
+    gap: 0;
+  }
+
+  .family-side {
+    flex: 1;
+    text-align: center;
+    padding: 20px 12px;
+  }
+
+  .family-side:first-child {
+    border-right: 1px solid var(--border);
+  }
+
+  .family-side-label {
+    font-size: 11px;
+    color: var(--gold);
+    letter-spacing: 0.15em;
+    margin-bottom: 14px;
+  }
+
+  .family-name-main {
+    font-size: 17px;
+    font-weight: 500;
+    margin-bottom: 6px;
+  }
+
+  .family-parents {
+    font-size: 12px;
+    color: #666;
+    line-height: 2;
+  }
+
+  /* ── MAP ── */
+  .map-placeholder {
+    width: 100%;
+    height: 200px;
+    background: #e8e4df;
+    border-radius: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    color: #bbb;
+    font-size: 12px;
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .venue-info {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    padding: 18px;
+    margin-bottom: 10px;
+  }
+
+  .venue-info p {
+    font-size: 12.5px;
+    line-height: 2;
+    color: #555;
+  }
+
+  .venue-info p strong { color: var(--dark); }
+
+  .map-btn-row {
+    display: flex;
+    gap: 8px;
+  }
+
+  .map-btn {
+    flex: 1;
+    padding: 11px;
+    border: 1px solid var(--border);
+    border-radius: 3px;
+    background: #fff;
+    font-size: 12px;
+    color: var(--dark);
+    cursor: pointer;
+    font-family: 'Noto Serif KR', serif;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+    text-decoration: none;
+  }
+
+  .map-btn:hover { background: var(--cream); }
+
+  /* ── TRANSPORT ── */
+  .transport-item {
+    display: flex;
+    gap: 14px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .transport-icon {
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: var(--gold);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    font-size: 14px;
+    color: white;
+    margin-top: 2px;
+  }
+
+  .transport-text strong {
+    display: block;
+    font-size: 13px;
+    color: var(--dark);
+    margin-bottom: 3px;
+  }
+
+  .transport-text p {
+    font-size: 12px;
+    color: #666;
+    line-height: 1.8;
+  }
+
+  /* ── PHOTO UPLOAD ── */
+  .photo-section {
+    background: linear-gradient(135deg, #2C2C2C 0%, #1a1510 100%);
+    padding: 60px 28px;
+    text-align: center;
+    color: #fff;
+  }
+
+  .photo-section .section-label { color: var(--gold-light); }
+
+  .photo-section p {
+    font-size: 13px;
+    line-height: 2.1;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 32px;
+  }
+
+  .upload-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: transparent;
+    border: 1px solid var(--gold);
+    color: var(--gold-light);
+    padding: 14px 32px;
+    border-radius: 2px;
+    font-size: 13px;
+    cursor: pointer;
+    font-family: 'Noto Serif KR', serif;
+    letter-spacing: 0.1em;
+    transition: all 0.25s;
+    text-decoration: none;
+  }
+
+  .upload-btn:hover {
+    background: var(--gold);
+    color: #fff;
+  }
+
+  .photo-note {
+    margin-top: 18px !important;
+    font-size: 11px !important;
+    color: rgba(255,255,255,0.3) !important;
+  }
+
+  /* ── CONGRATULATE ── */
+  .account-box {
+    background: #fff;
+    border: 1px solid var(--border);
+    border-radius: 4px;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+
+  .account-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 18px;
+    cursor: pointer;
+    user-select: none;
+  }
+
+  .account-header:hover { background: #FAF7F2; }
+
+  .account-header span:first-child {
+    font-size: 13px;
+    color: var(--dark);
+  }
+
+  .account-header .toggle {
+    font-size: 18px;
+    color: var(--gold);
+    line-height: 1;
+  }
+
+  .account-detail {
+    display: none;
+    padding: 14px 18px;
+    border-top: 1px solid var(--border);
+    background: #FAFAF8;
+  }
+
+  .account-detail.open { display: block; }
+
+  .account-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 6px 0;
+  }
+
+  .account-row p { font-size: 12.5px; color: #555; }
+  .account-row strong { font-size: 12.5px; color: var(--dark); }
+
+  .copy-btn {
+    background: none;
+    border: 1px solid var(--border);
+    border-radius: 2px;
+    padding: 4px 10px;
+    font-size: 11px;
+    color: var(--gold);
+    cursor: pointer;
+    font-family: 'Noto Serif KR', serif;
+    margin-top: 10px;
+  }
+
+  .copy-btn:hover { background: var(--cream); }
+
+  /* ── FOOTER ── */
+  footer {
+    padding: 40px 28px;
+    text-align: center;
+    background: #1a1510;
+    color: rgba(255,255,255,0.3);
+    font-size: 11px;
+    letter-spacing: 0.1em;
+  }
+
+  .footer-names {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    color: rgba(255,255,255,0.5);
+    font-style: italic;
+    margin-bottom: 10px;
+  }
+
+  /* ── TOAST ── */
+  .toast {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%) translateY(20px);
+    background: rgba(44,44,44,0.9);
+    color: #fff;
+    padding: 10px 24px;
+    border-radius: 30px;
+    font-size: 12px;
+    opacity: 0;
+    transition: all 0.3s;
+    z-index: 100;
+    white-space: nowrap;
+  }
+
+  .toast.show {
+    opacity: 1;
+    transform: translateX(-50%) translateY(0);
+  }
+
+  /* ── FADE IN ── */
+  .fade-in {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+
+  .fade-in.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="hero-img-area">
+    <div class="hero-img-placeholder">
+      <svg width="48" height="48" fill="none" viewBox="0 0 48 48">
+        <rect x="4" y="10" width="40" height="30" rx="3" stroke="currentColor" stroke-width="1.5"/>
+        <circle cx="18" cy="22" r="5" stroke="currentColor" stroke-width="1.5"/>
+        <path d="M4 34l10-8 7 6 8-10 15 12" stroke="currentColor" stroke-width="1.5" stroke-linejoin="round"/>
+      </svg>
+      커버 사진을 여기에 넣어주세요
+    </div>
+  </div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <p class="hero-label">Wedding Invitation</p>
+    <div class="hero-names">
+      Jong-Hyun<br><span class="amp">&</span><br>Eun-Ji
+    </div>
+    <p class="hero-date">2027 · 03 · 13 &nbsp;·&nbsp; SAT &nbsp;·&nbsp; 17:00</p>
+  </div>
+  <div class="scroll-hint">
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M12 5v14M5 12l7 7 7-7" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    SCROLL
+  </div>
+</div>
+
+<!-- GREETING -->
+<section class="fade-in">
+  <p class="section-label">Invitation</p>
+  <div class="divider"></div>
+  <div class="greeting-text">
+    <strong>두 사람이 하나가 되는 날,<br>함께해 주시겠습니까.</strong>
+    서로를 바라보며 걸어온 시간 끝에<br>
+    이제 함께 같은 곳을 향해 걷고자 합니다.<br><br>
+    바쁘신 걸음이시더라도<br>
+    저희의 새로운 시작을 축복해 주신다면<br>
+    더없이 큰 기쁨이 될 것입니다.
+  </div>
+</section>
+
+<!-- FAMILY -->
+<section class="fade-in">
+  <p class="section-label">Family</p>
+  <div class="divider"></div>
+  <div class="family-table">
+    <div class="family-side">
+      <p class="family-side-label">신 랑</p>
+      <p class="family-name-main">김종현</p>
+      <p class="family-parents">
+        김○○ · 이○○의<br>장남
+      </p>
+    </div>
+    <div class="family-side">
+      <p class="family-side-label">신 부</p>
+      <p class="family-name-main">이은지</p>
+      <p class="family-parents">
+        이○○ · 박○○의<br>장녀
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- DATE / TIME -->
+<section class="fade-in">
+  <p class="section-label">Date & Time</p>
+  <div class="divider"></div>
+  <div class="info-block">
+    <p class="info-main">2027. 03. 13</p>
+    <p class="info-sub">Saturday</p>
+    <div class="info-row">
+      <p><strong>오후 5시</strong> &nbsp;·&nbsp; 17:00</p>
+      <p style="margin-top:4px; font-size:12px; color:#aaa;">예식은 30분간 진행됩니다</p>
+    </div>
+  </div>
+</section>
+
+<!-- GALLERY -->
+<section class="fade-in">
+  <p class="section-label">Gallery</p>
+  <div class="divider"></div>
+  <div class="gallery-grid">
+    <div class="gallery-item">
+      <svg width="32" height="32" fill="none" viewBox="0 0 48 48"><rect x="4" y="10" width="40" height="30" rx="3" stroke="#bbb" stroke-width="1.5"/><circle cx="18" cy="22" r="5" stroke="#bbb" stroke-width="1.5"/><path d="M4 34l10-8 7 6 8-10 15 12" stroke="#bbb" stroke-width="1.5" stroke-linejoin="round"/></svg>
+      대표 사진
+    </div>
+    <div class="gallery-item">
+      <svg width="24" height="24" fill="none" viewBox="0 0 48 48"><rect x="4" y="10" width="40" height="30" rx="3" stroke="#bbb" stroke-width="1.5"/><circle cx="18" cy="22" r="5" stroke="#bbb" stroke-width="1.5"/></svg>
+      사진 2
+    </div>
+    <div class="gallery-item">
+      <svg width="24" height="24" fill="none" viewBox="0 0 48 48"><rect x="4" y="10" width="40" height="30" rx="3" stroke="#bbb" stroke-width="1.5"/><circle cx="18" cy="22" r="5" stroke="#bbb" stroke-width="1.5"/></svg>
+      사진 3
+    </div>
+    <div class="gallery-item">
+      <svg width="24" height="24" fill="none" viewBox="0 0 48 48"><rect x="4" y="10" width="40" height="30" rx="3" stroke="#bbb" stroke-width="1.5"/><circle cx="18" cy="22" r="5" stroke="#bbb" stroke-width="1.5"/></svg>
+      사진 4
+    </div>
+    <div class="gallery-item">
+      <svg width="24" height="24" fill="none" viewBox="0 0 48 48"><rect x="4" y="10" width="40" height="30" rx="3" stroke="#bbb" stroke-width="1.5"/><circle cx="18" cy="22" r="5" stroke="#bbb" stroke-width="1.5"/></svg>
+      사진 5
+    </div>
+  </div>
+</section>
+
+<!-- LOCATION -->
+<section class="fade-in">
+  <p class="section-label">Location</p>
+  <div class="divider"></div>
+  <div class="map-placeholder" onclick="window.open('https://naver.me/Fz1234','_blank')">
+    <svg width="32" height="32" fill="none" viewBox="0 0 24 24">
+      <path d="M12 2C8.134 2 5 5.134 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.866-3.134-7-7-7zm0 9.5a2.5 2.5 0 110-5 2.5 2.5 0 010 5z" stroke="#bbb" stroke-width="1.2" fill="none"/>
+    </svg>
+    지도를 여기에 삽입하세요
+  </div>
+  <div class="venue-info">
+    <p><strong>호텔 앙코르 이비스 앰배서더 웨딩 수원</strong></p>
+    <p>경기도 수원시 팔달구 권광로 132</p>
+    <p>☎ 031-230-5500</p>
+  </div>
+  <div class="map-btn-row">
+    <a class="map-btn" href="https://map.naver.com/v5/search/경기도%20수원시%20팔달구%20권광로%20132" target="_blank">
+      🗺 네이버 지도
+    </a>
+    <a class="map-btn" href="https://map.kakao.com/?q=이비스앰배서더수원" target="_blank">
+      🗺 카카오맵
+    </a>
+  </div>
+</section>
+
+<!-- TRANSPORT -->
+<section class="fade-in">
+  <p class="section-label">How to Come</p>
+  <div class="divider"></div>
+
+  <div class="transport-item">
+    <div class="transport-icon">🚇</div>
+    <div class="transport-text">
+      <strong>지하철</strong>
+      <p>수인분당선 <strong>수원시청역 2번 출구</strong><br>도보 3분 거리</p>
+    </div>
+  </div>
+
+  <div class="transport-item">
+    <div class="transport-icon">🚌</div>
+    <div class="transport-text">
+      <strong>버스</strong>
+      <p>수원시청역 2번 출구, 벽산그랜드코아 정류장<br>13-1, 20-2, 202, 80, 99-2, 3002, 4000, 4500</p>
+    </div>
+  </div>
+
+  <div class="transport-item">
+    <div class="transport-icon">🚗</div>
+    <div class="transport-text">
+      <strong>자가용 / 주차</strong>
+      <p>전용 주차장 450대 동시 주차 가능<br>3시간 무료 제공</p>
+    </div>
+  </div>
+
+  <div class="transport-item" style="border-bottom:none;">
+    <div class="transport-icon">🚐</div>
+    <div class="transport-text">
+      <strong>셔틀버스</strong>
+      <p>수원역 6번 출구 셔틀버스 무료 운행<br>예식 1시간 전 ~ 2시간 후</p>
+    </div>
+  </div>
+</section>
+
+<!-- PHOTO SHARE -->
+<div class="photo-section fade-in">
+  <p class="section-label">Share Your Photos</p>
+  <div class="divider" style="background: var(--gold-light);"></div>
+  <p>
+    소중한 순간을 함께 나눠주세요.<br>
+    결혼식 당일 찍어주신 사진을<br>
+    아래 구글 드라이브에 업로드해 주시면<br>
+    신랑 신부에게 큰 선물이 됩니다. 💛
+  </p>
+  <a class="upload-btn" href="YOUR_GOOGLE_DRIVE_LINK_HERE" target="_blank">
+    <svg width="16" height="16" fill="none" viewBox="0 0 24 24"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4M17 8l-5-5-5 5M12 3v12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    사진 올리기
+  </a>
+  <p class="photo-note">
+    링크를 교체하려면 YOUR_GOOGLE_DRIVE_LINK_HERE 부분을 수정해 주세요
+  </p>
+</div>
+
+<!-- CONGRATULATE -->
+<section class="fade-in">
+  <p class="section-label">Congratulate</p>
+  <div class="divider"></div>
+  <p style="text-align:center; font-size:13px; color:#666; margin-bottom:22px;">
+    참석이 어려우신 분들께서는<br>마음을 전해주셔도 감사히 받겠습니다.
+  </p>
+
+  <div class="account-box">
+    <div class="account-header" onclick="toggleAccount(this)">
+      <span>신랑측 계좌</span>
+      <span class="toggle">+</span>
+    </div>
+    <div class="account-detail">
+      <div class="account-row">
+        <p>신랑 김종현</p>
+        <strong>○○은행 000-000-000000</strong>
+      </div>
+      <div class="account-row">
+        <p>신랑 부 김○○</p>
+        <strong>○○은행 000-000-000000</strong>
+      </div>
+      <div class="account-row">
+        <p>신랑 모 이○○</p>
+        <strong>○○은행 000-000-000000</strong>
+      </div>
+      <button class="copy-btn" onclick="copyText('신랑 김종현 ○○은행 000-000-000000')">계좌번호 복사</button>
+    </div>
+  </div>
+
+  <div class="account-box">
+    <div class="account-header" onclick="toggleAccount(this)">
+      <span>신부측 계좌</span>
+      <span class="toggle">+</span>
+    </div>
+    <div class="account-detail">
+      <div class="account-row">
+        <p>신부 이은지</p>
+        <strong>○○은행 000-000-000000</strong>
+      </div>
+      <div class="account-row">
+        <p>신부 부 이○○</p>
+        <strong>○○은행 000-000-000000</strong>
+      </div>
+      <div class="account-row">
+        <p>신부 모 박○○</p>
+        <strong>○○은행 000-000-000000</strong>
+      </div>
+      <button class="copy-btn" onclick="copyText('신부 이은지 ○○은행 000-000-000000')">계좌번호 복사</button>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-names">Jong-Hyun & Eun-Ji</div>
+  <p>2027. 03. 13 &nbsp;·&nbsp; Saturday 17:00</p>
+  <p style="margin-top:6px;">호텔 앙코르 이비스 앰배서더 웨딩 수원</p>
+</footer>
+
+<div class="toast" id="toast"></div>
+
+<script>
+  // Fade-in on scroll
+  const obs = new IntersectionObserver(entries => {
+    entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.fade-in').forEach(el => obs.observe(el));
+
+  function toggleAccount(header) {
+    const detail = header.nextElementSibling;
+    const toggle = header.querySelector('.toggle');
+    const open = detail.classList.toggle('open');
+    toggle.textContent = open ? '−' : '+';
+  }
+
+  function copyText(text) {
+    navigator.clipboard.writeText(text).then(() => showToast('계좌번호가 복사되었습니다'));
+  }
+
+  function showToast(msg) {
+    const t = document.getElementById('toast');
+    t.textContent = msg;
+    t.classList.add('show');
+    setTimeout(() => t.classList.remove('show'), 2200);
+  }
+</script>
+</body>
+</html>
